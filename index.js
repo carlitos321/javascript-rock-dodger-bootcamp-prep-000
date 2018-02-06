@@ -111,6 +111,16 @@ function endGame() {
 }
 
 function moveDodger(e) {
+  document.addEventListener('keydown', function(e){
+    if (e.which !== LEFT_ARROW && e.which !== RIGHT_ARROW) {
+      preventDefault();
+    } else if (e.which === LEFT_ARROW) {
+      moveDodgerLeft();
+    } else if (e.which === RIGHT_ARROW) {
+      moveDodgerRight();
+    }
+  })
+
   // implement me!
   /**
    * This function should call `moveDodgerLeft()`
@@ -122,14 +132,25 @@ function moveDodger(e) {
 }
 
 function moveDodgerLeft() {
+
+      var leftNumbers = DODGER.style.left.replace('px', '')
+      var left = parseInt(leftNumbers, 10)
+
+      DODGER.style.left = `${left - 4}px`
+
   // implement me!
   /**
    * This function should move DODGER to the left
-   * (mabye 4 pixels?). Use window.requestAnimationFrame()!
+   * (maybe 4 pixels?). Use window.requestAnimationFrame()!
    */
 }
 
 function moveDodgerRight() {
+  var rightNumbers = DODGER.style.right.replace('px', '')
+  var right = parseInt(rightNumbers, 10)
+
+  DODGER.style.left = `${right + 4}px`
+
   // implement me!
   /**
    * This function should move DODGER to the right
