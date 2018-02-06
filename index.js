@@ -152,6 +152,7 @@ function moveDodgerRight() {
   var right = parseInt(rightNumbers, 10)
 
   if (right < 400) {
+      window.requestAnimationFrame();
       DODGER.style.right = `${right + 4}px`
   }
 
