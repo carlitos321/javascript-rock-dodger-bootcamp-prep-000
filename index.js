@@ -132,7 +132,6 @@ function moveDodger(e) {
 }
 
 function moveDodgerLeft() {
-      window.requestAnimationFrame(moveDodgerLeft);
       var leftNumbers = DODGER.style.left.replace('px', '')
       var left = parseInt(leftNumbers, 10)
       if (left > 0) {
