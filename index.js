@@ -111,7 +111,7 @@ function endGame() {
 }
 
 function moveDodger(e) {
-
+  window.addEventListener('keydown', function(e){
     if (e.which !== LEFT_ARROW && e.which !== RIGHT_ARROW) {
       preventDefault();
     } else if (e.which === LEFT_ARROW) {
@@ -119,6 +119,7 @@ function moveDodger(e) {
     } else if (e.which === RIGHT_ARROW) {
       moveDodgerRight();
     }
+  })
 
   // implement me!
   /**
@@ -131,14 +132,12 @@ function moveDodger(e) {
 }
 
 function moveDodgerLeft() {
-  window.addEventListener('keydown', function(e){
       var leftNumbers = DODGER.style.left.replace('px', '')
       var left = parseInt(leftNumbers, 10)
       if (left > 0) {
         DODGER.style.left = `${left - 4}px`
         window.requestAnimationFrame(moveDodgerLeft);
       }
-    })
   // implement me!
   /**
    * This function should move DODGER to the left
